@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'Curve25519Kit_Example' do
+  pod 'Curve25519Kit', :path => '../'
+
+  target 'Curve25519Kit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
