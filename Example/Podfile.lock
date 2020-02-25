@@ -1,0 +1,16 @@
+PODS:
+  - Curve25519Kit (0.1.0)
+
+DEPENDENCIES:
+  - Curve25519Kit (from `../`)
+
+EXTERNAL SOURCES:
+  Curve25519Kit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Curve25519Kit: 6fc8a7b15d080ba3575266ccc76015a2ef267ebb
+
+PODFILE CHECKSUM: 05875d0b83c93fb330b4b1bdc3242dcc0add25e4
+
+COCOAPODS: 1.8.4

@@ -6,37 +6,28 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-Pod::Spec.new do |s|
-  s.name             = 'Curve25519Kit'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Curve25519Kit.'
+Pod::Spec.new do |spec|
+spec.name         = 'Curve25519Kit'
+spec.version      = '2.1.0'
+spec.license      = { :type => 'GPLv3' }
+spec.homepage     = 'https://github.com/Planet-Chat/Curve25519Kit'
+spec.preserve_path = 'Curve25519Kit/Sources/ed25519/**/*.{c,h}'
+spec.authors      = { 'Frederic Jacobs' => 'github@fredericjacobs.com' }
+spec.summary      = 'Key agreement (curve25519) and signing (ed25519), all with curve25519 keys.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+spec.description  =  <<-DESC
+Curve25519 is a fast and secure curve used for key agreement. Unfortunately, it does not support signing out of the box. This pod translates the point curves to do ed25519 signing with curve25519 keys.
+DESC
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+spec.source       = { :git => 'https://github.com/Planet-Chat/Curve25519Kit.git', :tag => "#{spec.version}" }
+spec.source_files = 'Curve25519Kit/Classes/*.{h,m}', 'Curve25519Kit/Sources/Curve25519/curve25519-donna.c', 'Curve25519Kit/Sources/ed25519/*.{c,h}', 'Curve25519Kit/Sources/ed25519/additions/*.{c,h}', 'Curve25519Kit/Sources/ed25519/nacl_sha512/*.{c,h}', 'Curve25519Kit/Sources/ed25519/nacl_includes/*.{c,h}', 'Curve25519Kit/Private/*.{h,m}'
+#spec.private_header_files = 'Curve25519Kit/Sources/ed25519/nacl_includes/*.h','Curve25519Kit/Sources/ed25519/additions/*.h', 'Curve25519Kit/Sources/ed25519/nacl_sha512/*.h'
+spec.framework    = 'Security'
+spec.public_header_files = "Curve25519Kit/Classes/*.h"
+spec.requires_arc = true
+spec.ios.deployment_target = '9.0'
 
-  s.homepage         = 'https://github.com/psven/Curve25519Kit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'psven' => 'onthewayjoey@gmail.com' }
-  s.source           = { :git => 'https://github.com/psven/Curve25519Kit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+spec.dependency 'CocoaLumberjack'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'Curve25519Kit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Curve25519Kit' => ['Curve25519Kit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
+

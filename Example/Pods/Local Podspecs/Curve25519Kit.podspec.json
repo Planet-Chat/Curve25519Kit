@@ -1,0 +1,22 @@
+{
+  "name": "Curve25519Kit",
+  "version": "0.1.0",
+  "summary": "A short description of Curve25519Kit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/psven/Curve25519Kit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "psven": "onthewayjoey@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/psven/Curve25519Kit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Curve25519Kit/Classes/**/*"
+}
